@@ -17,8 +17,10 @@ def getNextProbableWords(classes: List[Dict],
 	answer = {statement: list() for statement in statements}
 	for statement in statements:
 		s = statement.split('.')
+		if '..' in statement:
+			continue
 		if len(s) == 1:
-			answer[statement] = [word for word in classes.keys() if word.startswith(s)]
+			answer[statement] = [word for word in classes.keys() if word.startswith(s[0])]
 		else:
 			current_word = s[0]
 			if current_word not in classes.keys():
