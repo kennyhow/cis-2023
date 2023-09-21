@@ -52,7 +52,7 @@ def getNextProbableWords(classes: List[Dict],
 
 	return answer
 
-@app.route('/lazydev', methods=['POST'])
+@app.route('/lazy-developer', methods=['POST'])
 def lazydev():
     data = request.get_json()
     logging.info("data sent for evaluation {}".format(data))
