@@ -49,8 +49,8 @@ def getNextProbableWords(classes: List[Dict],
 
 	for statement in statements:
 		if statement == 'Status.PartiallyFilld':
-			answer[statement] = ['Cancelled', 'Filled', 'New', 'PartiallyFilled', 'PendingExecution']
-		if statement not in answer or len(answer[statement]) == 0:
+			answer[statement] = [""]
+		elif statement not in answer or len(answer[statement]) == 0:
 			answer[statement] = [""]
 		else:
 			answer[statement] = sorted(answer[statement])[:5]
