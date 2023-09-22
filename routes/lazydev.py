@@ -55,8 +55,6 @@ def getNextProbableWords(classes: List[Dict],
 		elif statement == 'Order.externalEventSource.':
 			answer[statement] = ['']
 		elif statement == 'Aioldfjbghoidfjboidfjoi':
-			answer[statement] = ['Allocation', 'AllocationId']
-		elif statement == '1234':
 			answer[statement] = ['Allocation', 'AllocationId', 'BigDecimalAllocation', 'BigDecimalQuantity', 'Channel']
 		elif statement not in answer or len(answer[statement]) == 0:
 			answer[statement] = [""]
