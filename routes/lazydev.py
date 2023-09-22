@@ -54,6 +54,8 @@ def getNextProbableWords(classes: List[Dict],
 			answer[statement] = ['']
 		elif statement == 'Order.externalEventSource.':
 			answer[statement] = ['']
+		elif statement.startswith('LongAllocation.clientInstruction.'):
+			answer[statement] = ['']
 		elif statement not in answer or len(answer[statement]) == 0:
 			answer[statement] = [""]
 		answer[statement] = sorted(answer[statement])[:5]
