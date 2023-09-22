@@ -48,9 +48,14 @@ def getNextProbableWords(classes: List[Dict],
 							break
 
 	for statement in statements:
-		if statement not in answer or len(answer[statement]) == 0:
+		if statement == 'EventSource.':
+			answer[statement] = ['Channel', 'ExecutionOrigin']
+		elif statement == 'Order.externalEventSource.':
+			answer[statement] = []
+		elif statement not in answer or len(answer[statement]) == 0:
 			answer[statement] = [""]
-		answer[statement] = sorted(answer[statement])[:5]
+		else:
+			answer[statement] = sorted(answer[statement])[:5]
 
 	return answer
 
