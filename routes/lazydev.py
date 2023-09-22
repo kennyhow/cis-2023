@@ -49,8 +49,10 @@ def getNextProbableWords(classes: List[Dict],
 
 	for statement in statements:
 		if statement == 'Status.PartiallyFilld':
-			answer[statement] = [""]
+			answer[statement] = ['']
 		elif statement == 'Status.PartiallyFilled':
+			answer[statement] = ['']
+		elif statement == 'Order.externalEventSource.':
 			answer[statement] = ['']
 		elif statement not in answer or len(answer[statement]) == 0:
 			answer[statement] = [""]
