@@ -1,6 +1,6 @@
 import json
 import logging
-import base64
+import re
 
 from flask import request
 
@@ -22,12 +22,12 @@ def swiss_solve(code, case):
 		elif endif_index[i] or fail_index[i]:
 			code[i] = ''
 
-	
-	
+	to_replace = list(reversed(list(sorted(list(case.keys()), key = len))))
 	for i in range(len(code)):
-		for key in reversed(sorted(list(case), key = len)):
-			code[i] = code[i].replace(key, "~~~~['{}']".format(key))
-		code[i] = code[i].replace('~~~~', 'case')
+		for j, key in enumerate(to_replace):
+			code[i] = code[i].replace(key, "{}['{}']".format(4 * chr(1), key))
+	for i in range(len(code)):
+		code[i] = code[i].replace(4 * chr(1), 'case')
 
 	for i in range(len(code)):
 		if if_index[i]:

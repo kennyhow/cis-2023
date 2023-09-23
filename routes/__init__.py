@@ -8,3 +8,7 @@ import routes.digitalcolony
 import routes.railway
 import routes.payload
 import routes.swissbyte
+import routes.airport
+import routes.chinese_wall
+import routes.calendar_scheduling
+import routes.teleportation
