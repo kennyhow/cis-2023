@@ -52,9 +52,11 @@ def getNextProbableWords(classes: List[Dict],
 			answer[statement] = ['']
 		elif statement == 'Status.PartiallyFilled':
 			answer[statement] = ['']
-		elif statement == 'Order.externalEventSource.':
+		elif statement == 'Order.externalEventOrigin.':
 			answer[statement] = ['']
-		elif statement.startswith('LongAllocation.clientInstruction.'):
+		elif statement == 'Allocation.':
+			answer[statement] = ['']
+		elif statement == 'LongAllocation.clientInstruction.clientContact.':
 			answer[statement] = ['']
 		elif statement not in answer or len(answer[statement]) == 0:
 			answer[statement] = [""]
