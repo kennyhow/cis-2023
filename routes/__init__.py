@@ -12,3 +12,4 @@ import routes.airport
 import routes.chinese_wall
 import routes.calendar_scheduling
 import routes.teleportation
+import routes.minesweeper
